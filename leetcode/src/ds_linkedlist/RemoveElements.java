@@ -6,14 +6,56 @@
 package ds_linkedlist;
 
 public class RemoveElements {
-	public ListNode removeElements(ListNode head, int val) 
+//	iteratively
+	public static Node removeElements(Node head, int val) 
 	{
-		removeElements(head.next, val)
+		Node dummy = new Node(0);
+		dummy.next = head;
+		Node prev = dummy;
+		while(prev.next != null)
+		{
+			if(prev.next.val == val)
+			{
+				prev.next = prev.next.next;
+			}
+			else
+			{
+				prev = prev.next;
+			}
+		}
+		return dummy.next;
 	}
-
+// recursively
+	public static Node removeElements2(Node head, int val) 
+	{
+		if(head == null)
+		{
+			return head;
+		}
+		head.next = removeElements2(head.next, val);
+		if(head.val == val)
+		{
+			return head.next;
+		}
+		else
+		{
+			return head;
+		}
+		
+	}
+	
+	
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		MyLinkedList2 testlist = new MyLinkedList2();
+		testlist.addAtHead(3);
+		testlist.addAtHead(4);
+		testlist.addAtHead(5);
+		testlist.addAtHead(6);
+		testlist.addAtHead(5);
+		testlist.addAtHead(6);
+		removeElements(testlist.head.next, 6);
 	}
 
 }
