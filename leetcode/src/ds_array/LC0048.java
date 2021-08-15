@@ -1,4 +1,4 @@
-package leetcode;
+package ds_array;
 
 //import java.util.Scanner;
 //给你一幅由 N × N 矩阵表示的图像，其中每个像素的大小为 4 字节。

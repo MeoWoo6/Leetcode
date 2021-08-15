@@ -1,4 +1,4 @@
-package leetcode;
+package ds_array;
 
 public class LongestPalindrome {
 //	解法1 暴力列举 

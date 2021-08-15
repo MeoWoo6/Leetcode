@@ -1,4 +1,4 @@
-package leetcode;
+package ds_array;
 
 import java.util.HashSet;
 

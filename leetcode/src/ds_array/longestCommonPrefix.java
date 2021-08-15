@@ -1,4 +1,4 @@
-package leetcode;
+package ds_array;
 
 public class longestCommonPrefix {
 	//LCP Startwith() with find min
