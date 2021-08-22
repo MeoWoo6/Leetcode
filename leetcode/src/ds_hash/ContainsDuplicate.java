@@ -15,7 +15,7 @@ public class ContainsDuplicate {
             }
             hashset.add(nums[i]);
         }
-//      another way of looping
+//      another way of checking
         for (int x : nums) {
             if (!hashset.add(x)) {
                 return true;
