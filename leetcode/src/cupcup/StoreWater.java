@@ -1,4 +1,4 @@
-package spring21;
+package cupcup;
 
 public class StoreWater {
     public static void main(String[] args) {
