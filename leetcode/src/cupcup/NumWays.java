@@ -1,8 +1,16 @@
 package cupcup;
+// LCP07 传递信息
+// https://leetcode-cn.com/problems/chuan-di-xin-xi/
+// n: the number of members
+// m: the length of the relation array
+// k: steps
 
 import java.util.ArrayList;
 import java.util.List;
-
+// 方法一
+// 深度优先搜索
+// 时间复杂度 O(n^k)
+// 空间复杂度 O(m+n+k)
 public class NumWays {
     int n, k, ways; // 成员变量需要
     List<List<Integer>> edgelist; //方便得到邻居

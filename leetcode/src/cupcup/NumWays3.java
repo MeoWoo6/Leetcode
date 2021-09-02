@@ -1,5 +1,9 @@
 package cupcup;
 
+// 方法三
+// 动态规划
+// 时间复杂度 O(km) **快过其他俩
+// 空间复杂度 O(n)
 public class NumWays3 {
     public int numWays(int n, int[][] relation, int k) {
         int[] dp = new int[n];

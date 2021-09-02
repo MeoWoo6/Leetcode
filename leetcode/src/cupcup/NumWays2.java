@@ -4,6 +4,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+// 方法二
+// 广度优先搜索
+// 时间复杂度 O(n^k) **实际运行比深度优先以及动态规划慢很多，可能是队列存储的问题
+// 空间复杂度 O(m+n+n^k) 其中n^k为队列的空间开销
 public class NumWays2 {
     public static int numWays(int n, int[][] relation, int k) {
         List<List<Integer>> edges = new ArrayList<List<Integer>>();
