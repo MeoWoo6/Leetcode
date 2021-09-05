@@ -40,3 +40,35 @@ public class BuildTree2 {
         return root;
     }
 }
+//20210905 Take2!  不到一个月的时间，又写了遍。。果然没能一遍ac
+//问题：
+//1. rootIndex++ 没处理好，out of bounds后改成了官方题解那种方法，not clean
+//2. HashMap操作还是不熟练，总是搞反key和value，会出现NullPointerException
+//3. 回归头看之前的解法，helper参数里leftIndex, rightIndex控制着递归的边界，配合着rootIndex将每一个root放在合适的地方。
+
+class Solution {
+    int[] preorder;
+    Map<Integer, Integer> inordermap = new HashMap<>();
+    public TreeNode buildTree(int[] preorder, int[] inorder) {
+        this.preorder = preorder;
+        for(Integer i = 0; i < inorder.length; i++){
+            this.inordermap.put(inorder[i], i);
+        }
+        return helper(0, preorder.length-1, 0, inorder.length-1);
+    }
+
+    public TreeNode helper(int preleft, int preright, int inleft, int inright){
+        if(preleft > preright){
+            return null;
+        }
+        int rootVal = this.preorder[preleft];
+        TreeNode root = new TreeNode(rootVal);
+        int rootIdx = this.inordermap.get(rootVal);
+        int leftlen = rootIdx - inleft;
+        int rightlen = inright - rootIdx;
+        root.left = helper(preleft+1, preleft+leftlen, inleft, rootIdx-1);
+        root.right = helper(preleft+leftlen+1, preright, rootIdx+1, inright);
+        return root;
+    }
+
+}
